@@ -1,0 +1,7 @@
+kunst_cafe_main_homepage:
+    path:     /
+    defaults: { _controller: KunstCafeMainBundle:Default:index }
+
+kunst_cafe_main_about_us:
+    path:     /about
+    defaults: { _controller: KunstCafeMainBundle:Default:about }

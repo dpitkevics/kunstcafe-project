@@ -1,0 +1,7 @@
+kunst_cafe_main:
+    resource: "@KunstCafeMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
