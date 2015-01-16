@@ -28,17 +28,35 @@ class DefaultController extends Controller
 
     public function calendarAction()
     {
-        return $this->render('KunstCafeMainBundle:Default:calendar.html.twig');
+        $configData = $this->getPageConfig('calendar');
+
+        return $this->render('KunstCafeMainBundle:Default:calendar.html.twig', array(
+            'config' => $configData
+        ));
     }
 
     public function artistsAction()
     {
-        return $this->render('KunstCafeMainBundle:Default:artists.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $artists = $em->getRepository('KunstCafeMainBundle:Artist')->findAll();
+
+        return $this->render('KunstCafeMainBundle:Default:artists.html.twig', array(
+            'artists' => $artists,
+        ));
     }
 
     public function viewArtistAction($slug)
     {
-        return $this->render('KunstCafeMainBundle:Default:view_artist.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $artist = $em->getRepository('KunstCafeMainBundle:Artist')->findOneBy(array(
+            'slug' => $slug,
+        ));
+
+        return $this->render('KunstCafeMainBundle:Default:view_artist.html.twig', array(
+            'artist' => $artist,
+        ));
     }
 
     private function getPageConfig($page)

@@ -1,0 +1,26 @@
+    {% extends '::admin_layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <h1>Artist edit</h1>
+    </div>
+
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            {{ form(edit_form, {'attr': {'novalidate': 'novalidate' }}) }}
+        </div>
+    </div>
+
+        <div class="row">
+    <div class="large-12 small-12 columns">
+        <ul class="button-group">
+            <li>
+                <a href="{{ path('kunstcafe_main_artist_crud') }}" class="button">
+                    Back to the list
+                </a>
+            </li>
+                                    <li>{{ form(delete_form) }}</li>
+                    </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+    {% extends '::admin_layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <h1>ArtistImage</h1>
+    </div>
+
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <table class="record_properties">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Artist</th>
+                        <td>{{ entity.artist }}</td>
+                    </tr>
+                    <tr>
+                        <th>Image</th>
+                        <td>{{ entity.image }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="row">
+    <div class="large-12 small-12 columns">
+        <ul class="button-group">
+            <li>
+                <a href="{{ path('kunstcafe_main_artist_image_crud') }}" class="button">
+                    Back to the list
+                </a>
+            </li>
+                        <li>
+                <a href="{{ path('kunstcafe_main_artist_image_crud_edit', { 'id': entity.id }) }}" class="button">
+                    Edit
+                </a>
+            </li>
+                                    <li>{{ form(delete_form) }}</li>
+                    </ul>
+    </div>
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('KunstCafeMainBundle:Default:index.html.twig');
+        return $this->render('KunstCafeMainBundle:Admin:index.html.twig');
     }
 
     public function aboutAction()

@@ -1,0 +1,52 @@
+    {% extends '::admin_layout.html.twig' %}
+
+    {% block content %}
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1>Artist list</h1>
+        </div>
+
+        <div class="large-12 small-12 columns">
+            <table class="records_list">
+                <thead>
+                <tr>
+                        <th>Id</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Quote</th>
+                        <th>About</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                <tr>
+                            <td>
+                                <a href="{{ path('kunstcafe_main_artist_crud_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                            </td>
+                            <td>{{ entity.firstName }}</td>
+                            <td>{{ entity.lastName }}</td>
+                            <td>{{ entity.quote }}</td>
+                            <td>{{ entity.about }}</td>
+                            <td>
+                                <ul class="orbit-stack-on-small button-group">
+                                    <li>
+                                        <a href="{{ path('kunstcafe_main_artist_crud_show', { 'id': entity.id }) }}" class="button tiny">show</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('kunstcafe_main_artist_crud_edit', { 'id': entity.id }) }}" class="button tiny">edit</a>
+                                    </li>
+                                </ul>
+                            </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+                <div class="large-12 small-12 columns">
+            <a href="{{ path('kunstcafe_main_artist_crud_new') }}" class="button">
+                Create a new entry
+            </a>
+        </div>
+            </div>
+    {% endblock %}

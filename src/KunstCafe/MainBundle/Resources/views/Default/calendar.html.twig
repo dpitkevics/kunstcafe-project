@@ -1,8 +1,8 @@
 {% extends '::public_layout.html.twig' %}
 
-{% block main_banner_text %}{{ "Calendar"|trans }}{% endblock %}
+{% block main_banner_image %}{{ asset('images/' ~ config['main_banner_image']) }}{% endblock %}
 
-{% block main_banner_image %}{{ asset('images/norway-about-us.jpg') }}{% endblock %}
+{% block main_banner_text %}{{ config['main_banner_text'] }}{% endblock %}
 
 {% block stylesheets %}
     {% stylesheets 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.css' filter='cssrewrite' %}

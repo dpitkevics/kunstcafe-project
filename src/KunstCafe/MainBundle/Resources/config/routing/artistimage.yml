@@ -1,0 +1,30 @@
+kunstcafe_main_artist_image_crud:
+    path:     /
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:index" }
+
+kunstcafe_main_artist_image_crud_show:
+    path:     /{id}/show
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:show" }
+
+kunstcafe_main_artist_image_crud_new:
+    path:     /new
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:new" }
+
+kunstcafe_main_artist_image_crud_create:
+    path:     /create
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:create" }
+    requirements: { _method: post }
+
+kunstcafe_main_artist_image_crud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:edit" }
+
+kunstcafe_main_artist_image_crud_update:
+    path:     /{id}/update
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:update" }
+    requirements: { _method: post|put }
+
+kunstcafe_main_artist_image_crud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KunstCafeMainBundle:ArtistImage:delete" }
+    requirements: { _method: post|delete }

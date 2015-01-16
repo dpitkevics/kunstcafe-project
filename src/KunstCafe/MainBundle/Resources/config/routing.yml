@@ -1,3 +1,15 @@
+kunst_cafe_main_kunstcafe_main_artist_image_crud:
+    resource: "@KunstCafeMainBundle/Resources/config/routing/artistimage.yml"
+    prefix:   /admin/artist/image
+
+kunst_cafe_main_kunstcafe_main_artist_crud:
+    resource: "@KunstCafeMainBundle/Resources/config/routing/artist.yml"
+    prefix:   /admin/artist
+
+kunst_cafe_main_kunstcafe_main_calendar_crud:
+    resource: "@KunstCafeMainBundle/Resources/config/routing/event.yml"
+    prefix:   /admin/calendar
+
 kunst_cafe_main_homepage:
     path:     /
     defaults: { _controller: KunstCafeMainBundle:Default:index }

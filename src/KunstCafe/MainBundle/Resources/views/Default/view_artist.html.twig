@@ -1,6 +1,6 @@
 {% extends '::public_layout.html.twig' %}
 
-{% block main_banner_text %}Jim Artist{% endblock %}
+{% block main_banner_text %}{{ artist }}{% endblock %}
 
 {% block main_banner_image %}{{ asset('images/norway-about-us.jpg') }}{% endblock %}
 
@@ -14,7 +14,7 @@
     <div class="row bottom-margin">
         <div class="large-4 small-12 columns image-block scroll-fade-in">
             <div class="image">
-                <img src="{{ asset('images/artist-1.jpg') }}" alt />
+                <img src="{{ asset('uploads/media/' ~ artist.image) }}" alt="{{ artist }}" />
 
                 <div class="overlay"></div>
             </div>
@@ -23,14 +23,14 @@
         <div class="large-8 small-12 columns scroll-fade-in">
             <div class="row">
                 <div class="large-12 small-12 columns">
-                    <h2>Jim Artist</h2>
+                    <h2>{{ artist }}</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="large-12 small-12 columns">
                     <p>
-                        Story about me
+                        {{ artist.about }}
                     </p>
                 </div>
             </div>
@@ -40,15 +40,11 @@
     <div class="row full-width">
         <div class="large-12 small-12 columns scroll-fade-in image-block parent-middle">
             <ul class="gallery inline-list">
-                <li class="image">
-                    <img src="{{ asset('images/art-2.jpg') }}" alt />
-                </li>
-                <li class="image">
-                    <img src="{{ asset('images/art-4.jpg') }}" alt />
-                </li>
-                <li class="image">
-                    <img src="{{ asset('images/art-5.jpg') }}" alt />
-                </li>
+                {% for artistImage in artist.artistImages %}
+                    <li class="image">
+                        <img src="{{ asset('uploads/media/' ~ artistImage.image) }}" alt />
+                    </li>
+                {% endfor %}
             </ul>
             <a id="gallery-previous" class="in-middle" data-vertical>
                 <span class="fa-stack fa-3x">

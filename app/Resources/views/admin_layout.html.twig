@@ -12,10 +12,16 @@
 
         <section class="top-bar-section">
             <ul class="right">
-                <li><a href="#">Home Page</a></li>
-                <li><a href="{{ path('kunst_cafe_main_about_us') }}">{{ "About Us"|trans }}</a></li>
-                <li><a href="{{ path('kunst_cafe_main_calendar') }}">{{ "Calendar"|trans }}</a></li>
-                <li><a href="{{ path('kunst_cafe_main_artists') }}">{{ "Artists"|trans }}</a></li>
+                <li><a href="#">{{ "Home Page" }}</a></li>
+                <li><a href="#">{{ "About Us Page"|trans }}</a></li>
+                <li><a href="{{ path('kunstcafe_main_calendar_crud') }}">{{ "Calendar Page"|trans }}</a></li>
+                <li class="has-dropdown">
+                    <a href="#">{{ "Artists Page"|trans }}</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ path('kunstcafe_main_artist_crud') }}">{{ "Manage Artists"|trans }}</a></li>
+                        <li><a href="{{ path('kunstcafe_main_artist_image_crud') }}">{{ "Manage Artist Images"|trans }}</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Application Form</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact Us</a></li>
