@@ -46,6 +46,10 @@ $(function () {
         var offsetTop = $(this).offset().top;
         controller.addTween(offsetTop - ($(window).height() / 2), TweenMax.from($(this), 0.5, {css:{opacity:0, "margin-top":"50px"}}));
     });
+
+    $(".artist-row").on("click", function () {
+        window.location = $(this).data("href");
+    });
 });
 
 $(window).on("load", function () {

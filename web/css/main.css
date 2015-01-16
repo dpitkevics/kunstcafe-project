@@ -219,3 +219,20 @@ ul.gallery > li.image {
 .fa-stack .fa-angle-left, .fa-stack .fa-angle-right {
     margin-top: -5px;
 }
+
+td.fc-header-left, td.fc-header-right {
+    padding-top: 15px !important;
+}
+
+.styled-div {
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+}
+
+.bottom-margin {
+    margin-bottom: 2rem !important;
+}
+
+.artist-row {
+    cursor: pointer;
+}

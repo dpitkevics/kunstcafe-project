@@ -2,3 +2,8 @@ services:
 #    kunst_cafe_main.example:
 #        class: KunstCafe\MainBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+    kunstcafe.main.calendar_listener:
+        class: KunstCafe\MainBundle\EventListener\CalendarEventListener
+        arguments: ['@service_container', "@=service('doctrine.orm.entity_manager')"]
+        tags:
+            - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents }

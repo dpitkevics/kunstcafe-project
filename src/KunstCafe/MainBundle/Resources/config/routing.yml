@@ -5,3 +5,15 @@ kunst_cafe_main_homepage:
 kunst_cafe_main_about_us:
     path:     /about
     defaults: { _controller: KunstCafeMainBundle:Default:about }
+
+kunst_cafe_main_calendar:
+    path:     /calendar
+    defaults: { _controller: KunstCafeMainBundle:Default:calendar }
+
+kunst_cafe_main_artists:
+    path:     /artists
+    defaults: { _controller: KunstCafeMainBundle:Default:artists }
+
+kunst_cafe_main_view_artist:
+    path:     /artists/{slug}/view
+    defaults: { _controller: KunstCafeMainBundle:Default:viewArtist }

@@ -15,4 +15,19 @@ class DefaultController extends Controller
     {
         return $this->render('KunstCafeMainBundle:Default:about.html.twig');
     }
+
+    public function calendarAction()
+    {
+        return $this->render('KunstCafeMainBundle:Default:calendar.html.twig');
+    }
+
+    public function artistsAction()
+    {
+        return $this->render('KunstCafeMainBundle:Default:artists.html.twig');
+    }
+
+    public function viewArtistAction($slug)
+    {
+        return $this->render('KunstCafeMainBundle:Default:view_artist.html.twig');
+    }
 }
