@@ -1,3 +1,7 @@
+kunst_cafe_user:
+    resource: "@KunstCafeUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kunst_cafe_main:
     resource: "@KunstCafeMainBundle/Resources/config/routing.yml"
     prefix:   /
@@ -11,3 +15,6 @@ fos_js_routing:
 
 adesigns_calendar:
     resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

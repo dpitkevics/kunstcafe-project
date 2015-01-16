@@ -1,0 +1,22 @@
+{% block extends %}
+    {{ "{% extends '::admin_layout.html.twig' %}" }}
+{% endblock extends %}
+
+{% block content %}
+{{ "{% block content %}" }}
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1>{{ entity }} creation</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            {{ "{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}" }}
+        </div>
+    </div>
+
+    {% set hide_edit, hide_delete = true, true %}
+    {% include 'crud/views/others/record_actions.html.twig.twig' %}
+{{ "{% endblock %}" }}
+{% endblock content %}

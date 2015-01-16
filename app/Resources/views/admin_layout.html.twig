@@ -1,1 +1,25 @@
 {% extends '::base.html.twig' %}
+
+{% block top_bar %}
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Kunst Cafe</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span><i class="fa fa-bars"></i></span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <ul class="right">
+                <li><a href="#">Home Page</a></li>
+                <li><a href="{{ path('kunst_cafe_main_about_us') }}">{{ "About Us"|trans }}</a></li>
+                <li><a href="{{ path('kunst_cafe_main_calendar') }}">{{ "Calendar"|trans }}</a></li>
+                <li><a href="{{ path('kunst_cafe_main_artists') }}">{{ "Artists"|trans }}</a></li>
+                <li><a href="#">Application Form</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </section>
+    </nav>
+{% endblock %}

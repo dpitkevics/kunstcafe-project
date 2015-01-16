@@ -1,8 +1,8 @@
 {% extends '::public_layout.html.twig' %}
 
-{% block main_banner_text %}{{ "About Us"|trans }}{% endblock %}
+{% block main_banner_image %}{{ asset('images/' ~ config['main_banner_image']) }}{% endblock %}
 
-{% block main_banner_image %}{{ asset('images/norway-about-us.jpg') }}{% endblock %}
+{% block main_banner_text %}{{ config['main_banner_text'] }}{% endblock %}
 
 {% block javascripts %}
     {% javascripts 'js/gallery.js' %}
@@ -14,7 +14,7 @@
     <div class="row image-block-col">
         <div class="large-6 small-12 columns scroll-fade-in image-block">
             <div class="image">
-                <img src="{{ asset('images/img-1.jpg') }}" alt />
+                <img src="{{ asset('images/' ~ config['about_us_picture']) }}" alt />
 
                 <div class="overlay"></div>
             </div>
@@ -23,13 +23,13 @@
         <div class="large-6 small-12 columns scroll-fade-in">
             <div class="row">
                 <div class="large-12 small-12 columns">
-                    <h3>Kunst Cafe about heading</h3>
+                    <h3>{{ config['about_us_heading'] }}</h3>
                 </div>
             </div>
 
             <div class="row">
                 <div class="large-12 small-12 columns">
-                    <p>And some text about it</p>
+                    <p>{{ config['about_us_text'] }}</p>
                 </div>
             </div>
         </div>
@@ -38,14 +38,14 @@
     <div class="row image-block-col">
         <div class="large-6 small-12 columns scroll-fade-in text-center">
             <q class="large-quote">
-                Some quote about how this kunst cafe affected the world!
+                {{ config['about_us_quote'] }}
             </q>
-            <span class="author">Bill Gates</span>
+            <span class="author">{{ config['about_us_quote_author'] }}</span>
         </div>
 
         <div class="large-6 small-12 columns scroll-fade-in image-block">
             <div class="image">
-                <img src="{{ asset('images/img-2.jpg') }}" alt />
+                <img src="{{ asset('images/' ~ config['about_us_quote_image']) }}" alt />
 
                 <div class="overlay"></div>
             </div>
@@ -55,12 +55,11 @@
     <div class="row full-width">
         <div class="large-12 small-12 columns scroll-fade-in image-block parent-middle">
             <ul class="gallery inline-list">
-                <li class="image">
-                    <img src="{{ asset('images/art-4.jpg') }}" alt />
-                </li>
-                <li class="image">
-                    <img src="{{ asset('images/art-5.jpg') }}" alt />
-                </li>
+                {% for galleryImage in config['gallery_images'] %}
+                    <li class="image">
+                        <img src="{{ asset('images/' ~ galleryImage) }}" alt />
+                    </li>
+                {% endfor %}
             </ul>
             <a id="gallery-previous" class="in-middle" data-vertical>
                 <span class="fa-stack fa-3x">

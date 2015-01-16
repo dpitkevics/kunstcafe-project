@@ -1,0 +1,23 @@
+main_banner_image: norway-large.jpg
+main_banner_text: Kunst Café
+blocks:
+    first_block:
+        image: art-1.jpg
+        text: Our idea is to show people what Norwegian artists can do.
+        url: kunst_cafe_main_about_us
+    second_block:
+        image: art-2.jpg
+        text: We focus on art, that is why we are in a very beautiful place - Lokstallen
+        url: kunst_cafe_main_about_us
+    third_block:
+        image: art-3.png
+        text: We believe that everyone has artist inside, take a shot and join us (link to application form)
+        url: kunst_cafe_main_homepage
+    fourth_block:
+        image: art-4.jpg
+        text: Take off a few hours from everyday routine
+        url: kunst_cafe_main_calendar
+    fifth_block:
+        image: art-5.jpg
+        text: Every artist in history has its own unique and very interesting stories to tell; we have a few too (link to blog)
+        url: kunst_cafe_main_homepage

@@ -19,7 +19,9 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new ADesigns\CalendarBundle\ADesignsCalendarBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new KunstCafe\MainBundle\KunstCafeMainBundle(),
+            new KunstCafe\UserBundle\KunstCafeUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

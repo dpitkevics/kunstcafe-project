@@ -1,0 +1,12 @@
+
+                                <ul class="orbit-stack-on-small button-group">
+
+                                {%- for action in record_actions %}
+
+                                    <li>
+                                        <a href="{{ "{{ path('" ~ route_name_prefix ~ "_" ~ action ~ "', { 'id': entity."~ identifier ~" }) }}" }}" class="button tiny">{{ action }}</a>
+                                    </li>
+
+                                {%- endfor %}
+
+                                </ul>

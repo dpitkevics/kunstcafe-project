@@ -1,0 +1,15 @@
+main_banner_image: norway-about-us.jpg
+main_banner_text: About Us
+about_us_picture: img-1.jpg
+about_us_heading: Kunst Cafe about heading
+about_us_text: And some text about it
+about_us_quote: Some quote about how this kunst cafe affected the world!
+about_us_quote_author: Bill Gates
+about_us_quote_image: img-2.jpg
+gallery_images:
+    - art-4.jpg
+    - art-5.jpg
+    - art-2.jpg
+    - art-3.png
+    - art-4.jpg
+    - art-5.jpg

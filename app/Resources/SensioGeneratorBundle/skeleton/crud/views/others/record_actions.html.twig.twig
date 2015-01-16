@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="large-12 small-12 columns">
+        <ul class="button-group">
+            <li>
+                <a href="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}" class="button">
+                    Back to the list
+                </a>
+            </li>
+            {% if ('edit' in actions) and (not hide_edit) %}
+            <li>
+                <a href="{{ "{{ path('" ~ route_name_prefix ~ "_edit', { 'id': entity."~ identifier ~" }) }}" }}" class="button">
+                    Edit
+                </a>
+            </li>
+            {% endif %}
+            {% if ('delete' in actions) and (not hide_delete) %}
+            <li>{{ '{{ form(delete_form) }}' }}</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+{% block extends %}
+    {{ "{% extends '::admin_layout.html.twig' %}" }}
+{% endblock extends %}
+
+{% block content %}
+    {{ "{% block content %}" }}
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1>{{ entity }} list</h1>
+        </div>
+
+        <div class="large-12 small-12 columns">
+            <table class="records_list">
+                <thead>
+                <tr>
+                    {%- for field, metadata in fields %}
+
+                        <th>{{ field|capitalize }}</th>
+
+                    {%- endfor %}
+
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ '{% for entity in entities %}' }}
+                <tr>
+
+                    {%- for field, metadata in fields %}
+                        {%- if loop.first and ('show' in actions) %}
+
+                            <td>
+                                <a href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity."~ identifier ~" }) }}" }}">{{ '{{ entity.' ~ field|replace({'_': ''}) ~ ' }}' }}</a>
+                            </td>
+
+                        {%- elseif metadata.type in ['date', 'datetime'] %}
+
+                            <td>{{ '{% if entity.' ~ field|replace({'_': ''}) ~ ' %}{{ entity.' ~ field|replace({'_': ''}) ~ '|date(\'Y-m-d H:i:s\') }}{% endif %}' }}</td>
+
+                        {%- else %}
+
+                            <td>{{ '{{ entity.' ~ field|replace({'_': ''}) ~ ' }}' }}</td>
+
+                        {%- endif %}
+
+                        {%- if loop.last %}
+
+                            <td>
+                                {%- include "crud/views/others/actions.html.twig.twig" %}
+                            </td>
+
+                        {%- endif %}
+                    {%- endfor %}
+
+                </tr>
+                {{ '{% endfor %}' }}
+                </tbody>
+            </table>
+        </div>
+        {% if 'new' in actions %}
+        <div class="large-12 small-12 columns">
+            <a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="button">
+                Create a new entry
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {{ "{% endblock %}" }}
+{% endblock content %}

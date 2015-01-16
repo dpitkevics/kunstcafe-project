@@ -17,3 +17,9 @@ kunst_cafe_main_artists:
 kunst_cafe_main_view_artist:
     path:     /artists/{slug}/view
     defaults: { _controller: KunstCafeMainBundle:Default:viewArtist }
+
+# Admin
+
+kunst_cafe_admin_homepage:
+    path:     /admin
+    defaults: { _controller: KunstCafeMainBundle:Admin:index }
