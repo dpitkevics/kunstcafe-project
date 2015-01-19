@@ -30,8 +30,32 @@ kunst_cafe_main_view_artist:
     path:     /artists/{slug}/view
     defaults: { _controller: KunstCafeMainBundle:Default:viewArtist }
 
+kunst_cafe_main_application_form:
+    path:     /application
+    defaults: { _controller: KunstCafeMainBundle:Default:application }
+
+kunst_cafe_blog_index:
+    path:     /blog
+    defaults: { _controller: KunstCafeBlogBundle:Default:index }
+
+kunst_cafe_main_contact_us:
+    path:     /contact
+    defaults: { _controller: KunstCafeMainBundle:Default:contact }
+
 # Admin
 
 kunst_cafe_admin_homepage:
     path:     /admin
     defaults: { _controller: KunstCafeMainBundle:Admin:index }
+
+kunst_cafe_admin_home:
+    path:     /admin/home
+    defaults: { _controller: KunstCafeMainBundle:Admin:home }
+
+kunst_cafe_admin_about:
+    path:     /admin/about
+    defaults: { _controller: KunstCafeMainBundle:Admin:about }
+
+kunst_cafe_admin_manage_images:
+    path:     /admin/images
+    defaults: { _controller: KunstCafeMainBundle:Admin:images }

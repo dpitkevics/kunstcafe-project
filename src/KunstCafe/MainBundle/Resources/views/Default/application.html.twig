@@ -1,0 +1,26 @@
+{% extends '::public_layout.html.twig' %}
+
+{% block main_banner_image %}{{ asset('uploads/media/' ~ config['main_banner_image']) }}{% endblock %}
+
+{% block main_banner_text %}{{ config['main_banner_text'] }}{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js'
+                   'js/calendar-settings.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="large-12 small-12 columns scroll-fade-in">
+            {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        </div>
+    </div>
+{% endblock %}

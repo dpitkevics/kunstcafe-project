@@ -37,27 +37,29 @@
         </div>
     </div>
 
-    <div class="row full-width">
-        <div class="large-12 small-12 columns scroll-fade-in image-block parent-middle">
-            <ul class="gallery inline-list">
-                {% for artistImage in artist.artistImages %}
-                    <li class="image">
-                        <img src="{{ asset('uploads/media/' ~ artistImage.image) }}" alt />
-                    </li>
-                {% endfor %}
-            </ul>
-            <a id="gallery-previous" class="in-middle" data-vertical>
-                <span class="fa-stack fa-3x">
-                    <i class="fa fa-square-o fa-stack-2x"></i>
-                    <i class="fa fa-angle-left fa-stack-1x"></i>
-                </span>
-            </a>
-            <a id="gallery-next" class="in-middle" data-vertical>
-                <span class="fa-stack fa-3x">
-                    <i class="fa fa-square-o fa-stack-2x"></i>
-                    <i class="fa fa-angle-right fa-stack-1x"></i>
-                </span>
-            </a>
+    {% if artist.artistImages|length > 0 %}
+        <div class="row full-width">
+            <div class="large-12 small-12 columns scroll-fade-in image-block parent-middle">
+                <ul class="gallery inline-list">
+                    {% for artistImage in artist.artistImages %}
+                        <li class="image">
+                            <img src="{{ asset('uploads/media/' ~ artistImage.image) }}" alt />
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a id="gallery-previous" class="in-middle" data-vertical>
+                    <span class="fa-stack fa-3x">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-angle-left fa-stack-1x"></i>
+                    </span>
+                </a>
+                <a id="gallery-next" class="in-middle" data-vertical>
+                    <span class="fa-stack fa-3x">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-angle-right fa-stack-1x"></i>
+                    </span>
+                </a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}

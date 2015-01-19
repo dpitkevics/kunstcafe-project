@@ -1,0 +1,17 @@
+{% for key, value in variable %}
+    {% if value is iterable %}
+        <div class="row">
+            <div class="large-12 small-12 columns">
+                <h3>{{ (key|replace('_', ' '))|capitalize }}</h3>
+            </div>
+        </div>
+
+        {% include 'KunstCafeMainBundle:Admin:iterate.html.twig' with {'variable': value, 'html_prefix': key} %}
+    {% else %}
+        {% if 'image' in key %}
+            {% include 'KunstCafeMainBundle:Admin:form_image.html.twig' with {'key': key, 'html_prefix': html_prefix} %}
+        {% else %}
+            {% include 'KunstCafeMainBundle:Admin:form_field.html.twig' with {'key': key, 'html_prefix': html_prefix} %}
+        {% endif %}
+    {% endif %}
+{% endfor %}

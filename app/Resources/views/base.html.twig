@@ -23,6 +23,27 @@
             </div>
         </div>
 
+        <div class="row">
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div data-alert class="alert-box success">
+                    {{ flashMessage }}
+                    <a href="#" class="close">&times;</a>
+                </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div data-alert class="alert-box warning">
+                    {{ flashMessage }}
+                    <a href="#" class="close">&times;</a>
+                </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div data-alert class="alert-box alert">
+                    {{ flashMessage }}
+                    <a href="#" class="close">&times;</a>
+                </div>
+            {% endfor %}
+        </div>
+
         {% block main_banner %}{% endblock %}
 
         {% block content %}{% endblock %}

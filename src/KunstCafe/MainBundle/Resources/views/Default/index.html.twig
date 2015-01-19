@@ -1,6 +1,6 @@
 {% extends '::public_layout.html.twig' %}
 
-{% block main_banner_image %}{{ asset('images/' ~ config['main_banner_image']) }}{% endblock %}
+{% block main_banner_image %}{{ asset('uploads/media/' ~ config['main_banner_image']) }}{% endblock %}
 
 {% block main_banner_text %}{{ config['main_banner_text'] }}{% endblock %}
 
@@ -11,7 +11,7 @@
             <div class="large-6 small-12 columns image-block-col">
                 <div class="image-block scroll-fade-in">
                     <div class="image">
-                        <img src="{{ asset('images/' ~ block['image']) }}" alt="{{ block['text'] }}" />
+                        <img src="{{ asset('uploads/media/' ~ block['image']) }}" alt="{{ block['text'] }}" />
 
                         <div class="overlay"></div>
                     </div>
