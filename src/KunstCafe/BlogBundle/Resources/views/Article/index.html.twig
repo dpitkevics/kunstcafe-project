@@ -1,0 +1,54 @@
+    {% extends '::admin_layout.html.twig' %}
+
+    {% block content %}
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1>Article list</h1>
+        </div>
+
+        <div class="large-12 small-12 columns">
+            <table class="records_list">
+                <thead>
+                <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Body</th>
+                        <th>Createdat</th>
+                        <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                <tr>
+                            <td>
+                                <a href="{{ path('kunst_cafe_blog_article_crud_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                            </td>
+                            <td>{{ entity.title }}</td>
+                            <td>{{ entity.description }}</td>
+                            <td>{{ entity.body }}</td>
+                            <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                            <td>{{ entity.image }}</td>
+                            <td>
+                                <ul class="orbit-stack-on-small button-group">
+                                    <li>
+                                        <a href="{{ path('kunst_cafe_blog_article_crud_show', { 'id': entity.id }) }}" class="button tiny">show</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('kunst_cafe_blog_article_crud_edit', { 'id': entity.id }) }}" class="button tiny">edit</a>
+                                    </li>
+                                </ul>
+                            </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+                <div class="large-12 small-12 columns">
+            <a href="{{ path('kunst_cafe_blog_article_crud_new') }}" class="button">
+                Create a new entry
+            </a>
+        </div>
+            </div>
+    {% endblock %}

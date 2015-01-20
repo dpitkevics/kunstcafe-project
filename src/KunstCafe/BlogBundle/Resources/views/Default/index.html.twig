@@ -1,0 +1,19 @@
+{% extends '::public_layout.html.twig' %}
+
+{% block main_banner_image %}{{ asset('uploads/media/' ~ config['main_banner_image']) }}{% endblock %}
+
+{% block main_banner_text %}{{ config['main_banner_text'] }}{% endblock %}
+
+{% block content %}
+    {% if articles|length > 0 %}
+    <div class="row">
+
+    </div>
+    {% else %}
+        <div class="row">
+            <div class="large-12 small-12 columns">
+                <p>{{ "Sorry, no articles yet. Come back later!"|trans }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

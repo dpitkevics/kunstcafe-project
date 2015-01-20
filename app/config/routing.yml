@@ -1,3 +1,7 @@
+kunst_cafe_blog:
+    resource: "@KunstCafeBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kunst_cafe_user:
     resource: "@KunstCafeUserBundle/Resources/config/routing.yml"
     prefix:   /

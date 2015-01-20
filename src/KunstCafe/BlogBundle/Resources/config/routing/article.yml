@@ -1,0 +1,30 @@
+kunst_cafe_blog_article_crud:
+    path:     /
+    defaults: { _controller: "KunstCafeBlogBundle:Article:index" }
+
+kunst_cafe_blog_article_crud_show:
+    path:     /{id}/show
+    defaults: { _controller: "KunstCafeBlogBundle:Article:show" }
+
+kunst_cafe_blog_article_crud_new:
+    path:     /new
+    defaults: { _controller: "KunstCafeBlogBundle:Article:new" }
+
+kunst_cafe_blog_article_crud_create:
+    path:     /create
+    defaults: { _controller: "KunstCafeBlogBundle:Article:create" }
+    requirements: { _method: post }
+
+kunst_cafe_blog_article_crud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "KunstCafeBlogBundle:Article:edit" }
+
+kunst_cafe_blog_article_crud_update:
+    path:     /{id}/update
+    defaults: { _controller: "KunstCafeBlogBundle:Article:update" }
+    requirements: { _method: post|put }
+
+kunst_cafe_blog_article_crud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "KunstCafeBlogBundle:Article:delete" }
+    requirements: { _method: post|delete }

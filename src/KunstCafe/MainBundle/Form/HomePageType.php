@@ -119,7 +119,7 @@ class HomePageType extends AbstractType
                     'kunst_cafe_main_calendar' => 'Calendar',
                     'kunst_cafe_main_artists' => 'Artists',
                     'kunst_cafe_main_application_form' => 'Application Form',
-                    'kunst_cafe_main_blog' => 'Blog',
+                    'kunst_cafe_blog_index' => 'Blog',
                     'kunst_cafe_main_contact_us' => 'Contact Us',
                 ),
                 'data' => $this->config['blocks']['fifth_block']['url']

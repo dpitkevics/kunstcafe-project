@@ -1,0 +1,7 @@
+kunst_cafe_blog_kunst_cafe_blog_article_crud:
+    resource: "@KunstCafeBlogBundle/Resources/config/routing/article.yml"
+    prefix:   /admin/blog
+
+kunst_cafe_blog_homepage:
+    path:     /blog
+    defaults: { _controller: KunstCafeBlogBundle:Default:index }
